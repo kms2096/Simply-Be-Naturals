@@ -14,44 +14,20 @@
 
     <!-- Javascript -->
     <script src="src/app.js"></script>
+
+    <!-- Square -->
+    <script type="module" src="https://js.squareup.com/v2/paymentform"></script>
 </head>
 <body>
-    <!-- Header -->
-    <div class="navbar_container">
-        <!-- Mobile Dropdown Menu -->
-        <div class="dropdown">
-            <!-- Hidden Checkbox -->
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="dropbtn">☰</label>
-            
-            <div class="dropdown-content">
-                <a href="about.html">About</a>
-                <a href="store.html">Shop</a>
-                <!--a href="localstores.html">Find Stores Near You</a-->
-            </div>
-        </div>
-        
-    
-        <!-- Desktop Navigation -->
-        <div class="page_options_container">
-            <a href="about.html">About</a>
-            <a href="store.html">Shop</a>
-            <!--a href="localstores.html">Find Stores Near You</a-->
-        </div>
-    
-        <a href="about.html">
-            <img id="logo" src="data/images/navbar-Logo.jpg" alt="Simply Be Naturals Logo">
-        </a>
-    
-        <div id="store_options_container">
-            <!-- Magnifying Glass Icon -->
-            <div id="search-icon" class="search-icon" onclick="toggleSearchBar()">🔍</div>
-            <!-- Hidden Search Bar -->
-            <input type="text" id="search_bar" class="hidden-search" placeholder="Search">
-            
-            <div>Cart</div>
-        </div>
-    </div>
+    <div id="header"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(html => document.getElementById('header').innerHTML = html)
+                .catch(error => console.error("Error loading header:", error));
+        });
+    </script>
     
     <!-- About Page -->
     <h1 class="page_header">About Us</h1>

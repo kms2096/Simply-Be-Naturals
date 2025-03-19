@@ -52,31 +52,23 @@ footer {
     font-size: 18px;
 }
 
-.page_options_container,
-.store_options_container {
+#page_options_container,
+#store_options_container {
     display: flex;
-    flex: 1;
-    gap: 50px;
+    gap: 30px;
+    width: 100%;
 }
 
-.page_options_container {
+#page_options_container {
     padding-left: 4%;
     justify-content: flex-start; 
 }
 
-.store_options_container {
-    padding-right: 4%;
-    justify-content: flex-end;
-}
-
 /* Navbar adjustments for the search icon and cart */
-.store_options_container {
-    display: flex; /* Align the items horizontally */
+#store_options_container {
     justify-content: flex-end; /* Align items to the right */
     align-items: center; /* Align items vertically centered */
-    gap: 20px; /* Add spacing between items */
     padding-right: 4%;
-    width: auto;
 }
 
 #search-icon,
@@ -96,6 +88,7 @@ footer {
 /* Navbar */
 .dropdown {
     position: relative;
+    width: 100%;
 }
 
 .dropbtn {
@@ -141,11 +134,11 @@ footer {
 
 /* Search Bar */
 .hidden-search {
-    display: none;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: all 0.3s ease;
+    z-index: 100;
 }
 
 .hidden-search.show-search {
@@ -269,7 +262,7 @@ footer {
     padding: 5px;
 }
 
-.store_title {
+.data-product-name {
     text-align: center;
     flex: 1;
 }
@@ -281,7 +274,7 @@ footer {
     align-items: center;
 }
 
-.buy-button-store {
+.add-to-cart-btn {
     background-color: #4caf4f89;
     color: #000000;
     border-radius: 10%;
@@ -292,7 +285,7 @@ footer {
     background-color: #45a049;
 }
 
-.store_price {
+.data-product-price {
     color: #45a049;
     font-weight: bold;
     font-size: 18px;
@@ -412,11 +405,6 @@ footer {
     #search-icon {
         display: none;
     }
-
-    /* Make sure the search bar is hidden on desktop */
-    .hidden-search {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 960px) {
@@ -448,6 +436,14 @@ footer {
         height: 40px;
         font-size: 14px;
     }
+
+    /* Navbar adjustments for the search icon and cart */
+    #store_options_container {
+        justify-content: flex-end; /* Align items to the right */
+        align-items: center; /* Align items vertically centered */
+        gap: 15px;
+        padding-right: 2%;
+    }
     
     #logo {
         height: 40px;
@@ -476,8 +472,7 @@ footer {
     }
     
     /* Ensure other navbar elements are hidden on mobile */
-    .page_options_container,
-    .store_options_container,
+    #page_options_container,
     .hidden-search {
         display: none;
     }
@@ -486,4 +481,64 @@ footer {
     .hidden-search.show-search {
         display: block;
     }
+}
+
+
+/* Cart Dropdown */
+#cart-container {
+    position: relative;
+}
+
+#cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 100;
+    border-radius: 8px;
+}
+
+.cart-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #888;
+}
+
+.cart-footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#checkout-button:hover {
+    background-color: #45a049;
+}
+
+/* Show Cart Dropdown */
+.show-cart {
+    display: block !important;
 }

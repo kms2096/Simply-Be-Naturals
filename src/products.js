@@ -1,5 +1,5 @@
 // Product page
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Function to get query parameter (e.g., ?id=lotion1)
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -31,7 +31,7 @@
             }
         })
         .catch(error => console.error("Error loading product data:", error));
-});*/
+});
 
 
 // Store page
@@ -56,9 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </a>
                     <div class="store_info">
-                        <div class="store_title">${product.name}</div>
-                        <div class="price_and_button"><div class="store_price">${product.price}</div>
-                        <button class="buy-button-store">Add to Cart</button></div>
+                        <div class="data-product-name">${product.name}</div>
+                        <div class="price_and_button">
+                            <div class="data-product-price">${product.price}</div>
+                            <button class="add-to-cart-btn" data-product-name="${product.name}" data-product-price="${product.price}">Add to Cart</button>
+                        </div>
                     </div>
                 `;
                 container.appendChild(productTile);

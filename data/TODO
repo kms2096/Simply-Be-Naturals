@@ -1,12 +1,11 @@
 Needed:
 - Square
-- Add search bar and cart for mobile - icons on the right
 - Fix categories for store on mobile
+- fix nav bar too wide
 
 
 
 Later:
-- Fix search bar hitting enter refreshes the page
 - Featured/new section
 
 do i need "cursor: pointer"?
