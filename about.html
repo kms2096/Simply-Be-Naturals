@@ -43,8 +43,12 @@
             <img id="logo" src="data/images/navbar-Logo.jpg" alt="Simply Be Naturals Logo">
         </a>
     
-        <div class="store_options_container">
-            <input type="text" id="search_bar" placeholder="Search">
+        <div id="store_options_container">
+            <!-- Magnifying Glass Icon -->
+            <div id="search-icon" class="search-icon" onclick="toggleSearchBar()">🔍</div>
+            <!-- Hidden Search Bar -->
+            <input type="text" id="search_bar" class="hidden-search" placeholder="Search">
+            
             <div>Cart</div>
         </div>
     </div>

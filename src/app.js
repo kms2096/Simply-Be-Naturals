@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var btnContainer = document.getElementById("btn_container");
-    var btns = btnContainer ? btnContainer.getElementsByClassName("btn") : [];
-    var searchBar = document.getElementById("search_bar");
+    var btnContainerDropdown = document.getElementById("btn_container");
+    var btns = btnContainerDropdown ? btnContainerDropdown.getElementsByClassName("btn") : [];
+    var searchBar = document.getElementById("search_bar_desktop"); // Correct searchBar declaration
     var activeCategory = "all"; // Track currently selected category
 
     // Read query from URL
@@ -31,18 +31,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Prevent Enter key from clearing results
     if (searchBar) {
         searchBar.addEventListener("keydown", function (event) {
+            console.log("Key pressed:", event.key); // Debugging line
             if (event.key === "Enter") {
-                event.preventDefault();
+                console.log("Enter key pressed"); // Debugging line
+                event.preventDefault(); // Prevent default action like form submission or page reload
+
                 var query = searchBar.value.toLowerCase().trim();
+                console.log("Search Query:", query); // Debugging line
+                
                 if (query) {
                     localStorage.setItem("searchQuery", query);
-
+                    console.log("Search query saved to localStorage:", query); // Debugging line
+    
                     // Redirect to store page with query in URL
                     window.location.href = "store.html?search=" + encodeURIComponent(query);
                 }
+    
+                return false; // Ensure no further actions like form submission
             }
         });
 
@@ -74,4 +81,34 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchQuery) {
         setTimeout(filterSelection, 100);
     }
+
+    var btnContainer = document.getElementById("store_options_container");
+    //var searchBar = document.getElementById("search_bar");
+    var searchIcon = document.getElementById("search-icon");
+
+    // Log these elements to check if they're correctly selected
+    console.log("btnContainer:", btnContainer);
+    console.log("searchBar:", searchBar);
+    console.log("searchIcon:", searchIcon);
+
+    if (!btnContainer || !searchBar || !searchIcon) {
+        console.error("One or more elements not found!");
+    }
+
+    // Toggle the search bar and icon
+    function toggleSearchIcon() {
+        if (searchBar.classList.contains("show-search")) {
+            searchIcon.innerHTML = "❌"; // Change to "X" when search bar is opened
+        } else {
+            searchIcon.innerHTML = "🔍"; // Return to magnifying glass when closed
+        }
+    }
+    
+    if (searchIcon && searchBar) {
+        searchIcon.addEventListener("click", function () {
+            searchBar.classList.toggle("show-search");
+            toggleSearchIcon();
+        });
+    }
+
 });

@@ -1,5 +1,5 @@
 // Product page
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     // Function to get query parameter (e.g., ?id=lotion1)
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch(error => console.error("Error loading product data:", error));
-});
+});*/
 
 
 // Store page
