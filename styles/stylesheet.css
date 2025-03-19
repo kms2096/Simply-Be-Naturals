@@ -1,0 +1,474 @@
+/* Temp/Debug */
+/* {
+    border-style: solid;
+} 
+
+/* Fonts */
+.delius-regular {
+    font-family: "Delius", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.meow-script-regular {
+    font-family: "Meow Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Delius', sans-serif;
+}
+
+.page_header,
+#product_name {
+    font-family: 'Meow Script', cursive;
+    color: #45a049;
+    font-size: 50px;
+    margin-bottom: 0;
+    margin-left: 15%;
+}
+
+body {
+    background-color: #f2e9eb;
+    margin: 0;
+}
+
+a,
+footer {
+    color: #7eaa9b;
+    text-decoration: none;
+}
+
+a {
+    display: block; /* Ensure anchor tag behaves as a block-level element */
+    text-decoration: none; /* Prevent any unwanted padding */
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Navbar */
+.navbar_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    width: 100%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    font-size: 18px;
+}
+
+.page_options_container,
+.store_options_container {
+    display: flex;
+    flex: 1;
+}
+
+.page_options_container {
+    padding-left: 4%;
+    flex-grow: 1;
+    justify-content: flex-start; 
+    gap: 50px;
+}
+
+.store_options_container {
+    padding-right: 4%;
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+/* Hide default checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Navbar */
+.dropdown {
+    position: relative; /* Make sure the parent has relative positioning */
+}
+
+/* Style the button */
+.dropbtn {
+    background-color: transparent;
+    color: #7eaa9b;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* Hide the dropdown by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Dropdown appears below the button */
+    left: 0; /* Align dropdown content to the left */
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-width: 100%; /* Prevent overflow */
+    /* Add padding to ensure dropdown content doesn't stick to the edges */
+    padding: 5px 0;
+    margin-top: -10px;
+}
+
+/* Show dropdown when checkbox is checked */
+#menu-toggle:checked ~ .dropdown-content {
+    display: block;
+}
+
+/* Hide menu when clicking a link */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ensure dropdown doesn't go off-screen */
+.dropdown-content {
+    max-width: 90vw;  /* This will make sure it stays within the viewport */
+}
+
+
+/* Logo */
+#logo {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%; /* Moves the logo down */
+    transform: translate(-50%, -50%); /* Centers it properly */
+}
+
+
+/* About Page */
+.about_container {
+    margin: 50px auto;
+    width: 90%;
+}
+
+#about_picture {
+    float: left; 
+    width: 250px; 
+    border-radius: 15%;
+}
+
+#about_paragraph {
+    color: #000000;
+    font-size: 25px;
+}
+
+
+/* Store Page */
+#tile_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+.filterDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    flex-grow: 0; /* Prevent growth */
+    flex-shrink: 0; /* Prevent shrinking */
+    height: auto;
+}
+
+.store_navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 30px auto 0 auto;
+}
+
+#btn_container {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between buttons */
+    width: 100%; /* Ensure the container takes up the full width */
+    gap: 10px; /* Optional: add space between the buttons */
+}
+
+.btn {
+    background-color: #4caf4f89;
+    color: #000000;
+    border-radius: 10%;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn:active {
+    background-color: #000000;
+}
+
+.store_image_container {
+    /* Set your desired width */
+    /* Set your desired height */
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.store-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.store-image:hover {
+    transform: scale(1.2);
+}
+
+.store_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Matches container width */
+    box-sizing: border-box; /* Ensure padding and borders are included in width calculation */
+    padding: 5px;
+}
+
+.store_title {
+    text-align: center;
+    flex: 1;
+    margin: 0;
+}
+
+.price_and_button {
+    display: flex;
+    justify-content: space-between; /* Align price and button on the same line */
+    width: 100%; /* Ensure they stretch across the container */
+    gap: 15px; /* Space between price and button */
+    align-items: center;
+}
+
+.buy-button-store {
+    background-color: #4caf4f89;
+    color: #000000;
+    border-radius: 10%;
+    white-space: nowrap;
+}
+
+.buy-button-store:hover {
+    background-color: #45a049;
+}
+
+.store_price {
+    color: #45a049;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+
+
+/* Contact */
+footer {
+    text-align: center;
+}
+
+.contact_container {
+    padding: 100px 0 15px 0;
+}
+
+#trademark {
+    margin: 50px auto 0 auto;
+}
+
+
+/* Product Page */
+#product_container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 25px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    align-items: center;
+
+
+    width: 90%;
+    /*margin: 50px auto;*/
+}
+
+#product_image {
+    grid-row: 1 / span 3; /* Image spans all three rows */
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+#product_name {
+    text-align: left;
+    grid-column: 2 / span 2;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+#product_price {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: end;
+}
+
+.buy_button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#product_description {
+    grid-column: 2 / span 2;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/**/
+
+@media screen and (max-width: 450px) {
+    #tile_container {
+        display: block;
+        width: 75%;
+    }
+
+    .filterDiv {
+        margin-bottom: 10px;
+    }
+
+    .store_info {
+        width: auto;
+        padding: 5px;
+    }
+
+    .store_title {
+        padding: 5px;
+    }
+}
+
+
+
+
+/* Hide dropdown for desktop */
+@media screen and (min-width: 961px) {
+    .dropdown {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .about_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+    
+    #about_picture {
+        float: none;
+        margin: auto;
+        width: 40%;
+    }
+    
+    #about_paragraph {
+        padding: 5px 19px;
+        font-size: 20px;
+    }
+    
+    .page_header,
+    #product_name {
+        font-size: 40px;
+        margin-left: 5%;
+    }
+    
+    .navbar_container {
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    #logo {
+        height: 40px;
+        
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none; /* Hide by default */
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    /* Show dropdown when hovering over the button */
+    .dropdown:hover .dropdown-content, /* For desktops */
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+    
+    /* Ensure other navbar elements are hidden on mobile */
+    .page_options_container,
+    .store_options_container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #tile_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .price_and_button {
+    
+        width: auto;
+    }
+}
+@media screen and (max-width: 700px) {
+    #tile_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

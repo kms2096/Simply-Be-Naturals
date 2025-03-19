@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": "lotion1",
+            "name": "Lavender Lotion",
+            "description": "A soothing lavender-scented lotion for soft skin.",
+            "price": "$12.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "Lotion"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"]
+        }
+    ]
+}

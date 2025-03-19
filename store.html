@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Be Naturals</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap" rel="stylesheet">
+
+    <!-- Javascript -->
+    <script src="src/app.js" defer></script>
+    <script src="src/products.js" defer></script> 
+</head>
+<body>
+    <!-- Header -->
+    <div class="navbar_container">
+        <!-- Mobile Dropdown Menu -->
+        <div class="dropdown">
+            <!-- Hidden Checkbox -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="dropbtn">☰</label>
+            
+            <div class="dropdown-content">
+                <a href="about.html">About</a>
+                <a href="store.html">Shop</a>
+                <!--a href="localstores.html">Find Stores Near You</a-->
+            </div>
+        </div>
+        
+    
+        <!-- Desktop Navigation -->
+        <div class="page_options_container">
+            <a href="about.html">About</a>
+            <a href="store.html">Shop</a>
+            <!--a href="localstores.html">Find Stores Near You</a-->
+        </div>
+    
+        <a href="about.html">
+            <img id="logo" src="data/images/navbar-Logo.jpg" alt="Simply Be Naturals Logo">
+        </a>
+    
+        <div class="store_options_container">
+            <input type="text" id="search_bar" placeholder="Search">
+            <div>Cart</div>
+        </div>
+    </div>
+    <h1 class="page_header">Shop</h1>
+    <!-- Categories of items -->
+    <section class="store_navigation">
+        <!--ul class="filter_menu">
+            <button class="dropdown_btn">Filter</button>
+            <div class="dropdown_menu">
+                <li class="btn" onclick="filterSelection('all')">Show All</li>
+                <li class="btn" onclick="filterSelection('Lotion')">Lotion</li>
+                <li class="btn" onclick="filterSelection('LipBalm')">Lip Balm</li>
+            </div>
+        </ul-->
+        <div id="btn_container">
+            <button class="btn active" data-category="all">Show All</button>
+            <button class="btn" data-category="Featured">Featured</button>
+            <button class="btn" data-category="Hair">Hair Products</button>
+            <button class="btn" data-category="Soap">Soap</button>
+            <button class="btn" data-category="Detergent">Detergent</button>
+            <button class="btn" data-category="Lotion">Lotion</button>
+            <button class="btn" data-category="LipBalm">Lip Balm</button>
+        </div>
+    </section>
+    <div id="tile_container"></div>
+</body>
+<!-- Contact Info -->
+<footer>
+    <div class="contact_container">
+        <div class="contact_phone">(585) 736-1152</div>
+        <div class="contact_email">contact@simplybenaturals.com</div>
+    </div>
+    <!-- TODO: is this needed?? -->
+    <p id="trademark">&copy; 2025 Simply Be Naturals. All rights reserved.</p>
+</footer>
+</html>
