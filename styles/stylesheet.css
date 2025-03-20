@@ -13,7 +13,7 @@
 
 /* Temp/Debug */
 * {
-    border-style: solid;
+    /* border-style: solid; */
     margin: 0;
     padding: 0;
 } 
@@ -56,7 +56,7 @@ footer {
 #store_options_container {
     display: flex;
     gap: 30px;
-    width: 100%;
+    width: auto;
 }
 
 #page_options_container {
@@ -88,7 +88,7 @@ footer {
 /* Navbar */
 .dropdown {
     position: relative;
-    width: 100%;
+    width: auto;
 }
 
 .dropbtn {
@@ -234,7 +234,6 @@ footer {
 
 .store_image_container {
     width: 100%;
-    height: 200px;
     overflow: hidden;
     display: flex;
     justify-content: center;

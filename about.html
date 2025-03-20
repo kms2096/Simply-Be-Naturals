@@ -12,22 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap" rel="stylesheet">
 
-    <!-- Javascript -->
-    <script src="src/app.js"></script>
-
     <!-- Square -->
     <script type="module" src="https://js.squareup.com/v2/paymentform"></script>
 </head>
 <body>
     <div id="header"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('header.html')
-                .then(response => response.text())
-                .then(html => document.getElementById('header').innerHTML = html)
-                .catch(error => console.error("Error loading header:", error));
-        });
-    </script>
+    <script script src="src/app.js"></script>
     
     <!-- About Page -->
     <h1 class="page_header">About Us</h1>

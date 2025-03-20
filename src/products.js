@@ -16,16 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const product = data.products.find(item => item.id === productId);
 
             if (product) {
-                // Populate page with product details
                 document.getElementById("product_image").src = product.image;
                 document.getElementById("product_name").textContent = product.name;
                 document.getElementById("product_description").textContent = product.description;
                 document.getElementById("product_price").textContent = product.price;
 
-                // Update page title dynamically
                 document.title = product.name + " - Simply Be Naturals";
             } else {
-                // Handle invalid product ID
                 document.getElementById("product_container").innerHTML = "<p>Product not found.</p>";
                 document.title = "Product Not Found - Simply Be Naturals";
             }
@@ -36,14 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Store page
 document.addEventListener("DOMContentLoaded", function () {
-    // Fetch product data
     fetch("./data/products.json")
         .then(response => response.json())
         .then(data => {
-            const products = data.products; // Assuming the products array is in 'products' in the JSON
+            const products = data.products;
 
             const container = document.getElementById('tile_container');
-            container.innerHTML = ''; // Clear existing content
+            container.innerHTML = '';
 
             products.forEach(product => {
                 const productTile = document.createElement('div');

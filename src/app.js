@@ -25,20 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCartDropdown();
 
             // Add to cart buttons
-            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const productName = this.getAttribute('data-product-name');
-                    const productPrice = this.getAttribute('data-product-price');
-                    
-                    // Add item to cart
+            document.getElementById('tile_container').addEventListener('click', function (event) {
+                if (event.target.classList.contains('add-to-cart-btn')) {
+                    const productName = event.target.getAttribute('data-product-name');
+                    const productPrice = event.target.getAttribute('data-product-price');
+            
                     const item = { name: productName, price: productPrice };
                     cart.push(item);
-                    
-                    // Update the cart UI
+            
                     updateCartDropdown();
-                });
+                }
             });
+            
 
             // Read query from URL
             var urlParams = new URLSearchParams(window.location.search);
@@ -115,9 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Toggle the search bar and icon
             function toggleSearchIcon() {
                 if (searchBar.classList.contains("show-search")) {
-                    searchIcon.innerHTML = "❌"; // Change to "X" when search bar is opened
+                    searchIcon.innerHTML = "❌";
                 } else {
-                    searchIcon.innerHTML = "🔍"; // Return to magnifying glass when closed
+                    searchIcon.innerHTML = "🔍";
                 }
             }
 

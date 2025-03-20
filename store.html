@@ -12,10 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap" rel="stylesheet">
 
-    <!-- Javascript -->
-    <script src="src/app.js" defer></script>
-    <script src="src/products.js" defer></script> 
-
     <!-- Square -->
     <!--script src="https://js.squareup.com/v2/paymentform"></script-->
     <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"></script>
@@ -23,14 +19,7 @@
 </head>
 <body>
     <div id="header"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('header.html')
-                .then(response => response.text())
-                .then(html => document.getElementById('header').innerHTML = html)
-                .catch(error => console.error("Error loading header:", error));
-        });
-    </script>
+    <!--script script src="src/app.js"></script-->
     <h1 class="page_header">Shop</h1>
     <!-- Categories of items -->
     <section class="store_navigation">
@@ -53,6 +42,8 @@
         </div>
     </section>
     <div id="tile_container"></div>
+    <script src="src/products.js"></script> 
+    <script src="src/app.js"></script>
 </body>
 <!-- Contact Info -->
 <footer>
