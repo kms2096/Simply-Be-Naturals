@@ -1,38 +1,63 @@
 const SQUARE_APPLICATION_ID = "sandbox-sq0idb-2b8SdmkXATd2MopBMhmyzg";
 
-async function redirectToSquareCheckout(cartItems) {
-    try {
-        const response = await fetch("https://your-server.com/create-checkout", { // Replace with your server URL
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items: cartItems })
-        });
-
-        const data = await response.json();
-
-        if (data.checkout_url) {
-            window.location.href = data.checkout_url; // Redirect user to Square's checkout page
-        } else {
-            console.error("Error creating Square checkout:", data);
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-    }
-}
-
 document.getElementById("checkout-button").addEventListener("click", async () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const response = await fetch("http://localhost:3000/create-checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cartItems: cart })
-    });
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
 
-    const data = await response.json();
-    if (data.checkoutUrl) {
-        window.location.href = data.checkoutUrl; // Redirect to Square checkout
+    try {
+        const response = await fetch("http://localhost:3000/create-checkout", { // Replace with your actual backend URL
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ items: cart }) // Send the entire cart
+        });
+
+        const data = await response.json();
+        if (data.checkoutUrl) {
+            window.location.href = data.checkoutUrl; // Redirect to Square checkout page
+        } else {
+            console.error("Error creating checkout:", data);
+        }
+    } catch (error) {
+        console.error("Checkout error:", error);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if SqPaymentForm is loaded
+    if (window.SqPaymentForm) {
+        console.log("SqPaymentForm is loaded!");
+
+        const paymentForm = new SqPaymentForm({
+            applicationId: SQUARE_APPLICATION_ID, // Your Sandbox Application ID
+            locationId: "LFQ5PA03FEVQ0", // Your Square location ID (can be found in your Square Dashboard)
+            card: {
+                elementId: "card-container", // The element where the payment form will render
+                placeholder: "Card Number",
+            },
+            callback: {
+                paymentFormLoaded: function () {
+                    console.log("Payment form loaded!");
+                },
+                paymentVerificationError: function (errors) {
+                    console.log(errors);
+                },
+                paymentMethodNonceReceived: function (nonce) {
+                    processPayment(nonce); // Call your payment processing function here
+                }
+            }
+        });
+
+        // Add your form submit event listener here
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            paymentForm.requestCardNonce(); // This will generate a nonce for the card
+        });
+
     } else {
-        alert("Checkout failed!");
+        console.error("SqPaymentForm is not loaded.");
     }
 });

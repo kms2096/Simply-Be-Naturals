@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square Checkout Test</title>
+</head>
+<body>
+    <h1>Test Square Checkout</h1>
+    <button id="checkout-button">Checkout with Square</button>
+
+    <script>
+        const script = document.createElement("script");
+        script.src = "https://sandbox.web.squarecdn.com/v1/square.js"; // Change to production for live
+        script.onload = function() {
+            console.log("Square script loaded successfully.");
+            setTimeout(function() {
+                // Add a delay before checking for SqPaymentForm
+                if (window.SqPaymentForm) {
+                    console.log("SqPaymentForm is available.");
+                } else {
+                    console.error("SqPaymentForm is not available.");
+                }
+            }, 2000);  // Wait for 2 seconds before checking
+        };
+        script.onerror = function() {
+            console.error("Failed to load Square script.");
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

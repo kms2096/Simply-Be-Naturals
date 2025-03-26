@@ -12,3 +12,11 @@ do i need "cursor: pointer"?
 
 // New Email
 makaylamaejohnson@gmail.com
+
+
+
+
+<form id="payment-form">
+    <div id="card-container"></div>
+    <button id="submit-button" type="submit">Pay Now</button>
+</form>
