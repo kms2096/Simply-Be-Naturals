@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("product_name").textContent = product.name;
                 document.getElementById("product_description").textContent = product.description;
                 document.getElementById("product_price").textContent = product.price;
+                
+                // Update Buy Button to Redirect to Square Payment Link
+                const buyButton = document.querySelector(".buy-button");
+                buyButton.addEventListener("click", function () {
+                    window.open(product.paymentLink, "_blank"); // Opens in new tab
+                });
 
                 document.title = product.name + " - Simply Be Naturals";
             } else {
@@ -44,7 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
             products.forEach(product => {
                 const productTile = document.createElement('div');
                 productTile.classList.add('filterDiv', ...product.category);
-
+            
+                // Temporarily remove the Add to Cart button
+                const buyButton = product.paymentLink
+                    ? `<a href="${product.paymentLink}" target="_blank">
+                        <button class="buy-now-btn">Buy Now</button>
+                    </a>`
+                    : '';
+            
                 productTile.innerHTML = `
                     <a href="product.html?id=${product.id}">
                         <div class="store_image_container">
@@ -55,12 +68,26 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="data-product-name">${product.name}</div>
                         <div class="price_and_button">
                             <div class="data-product-price">${product.price}</div>
-                            <button class="add-to-cart-btn" data-product-name="${product.name}" data-product-price="${product.price}">Add to Cart</button>
+                            <!-- <button class="add-to-cart-btn" data-product-name="${product.name}" data-product-price="${product.price}">Add to Cart</button> -->
+                            ${buyButton}
                         </div>
                     </div>
                 `;
+            
                 container.appendChild(productTile);
-            });
+            });            
         })
         .catch(error => console.error("Error loading product data:", error));
 });
+/*
+<div class="store_info">
+                        <div class="data-product-name">${product.name}</div>
+                        <div class="price_and_button">
+                            <div class="data-product-price">${product.price}</div>
+                            <button class="add-to-cart-btn" data-product-name="${product.name}" data-product-price="${product.price}">Add to Cart</button>
+                            <a href="${product.paymentLink}" target="_blank">
+                                <button class="buy-now-btn">Buy Now</button>
+                            </a>
+                        </div>
+                    </div>
+                     */
