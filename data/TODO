@@ -1,12 +1,11 @@
 Needed:
 - Square
-- Fix categories for store on mobile
-- Move text over on about page
 
 
 Later:
 - Featured/new section
 - Make a dark mode
+- clean up code: move /body tags
 
 do i need "cursor: pointer"?
 
@@ -16,7 +15,135 @@ makaylamaejohnson@gmail.com
 
 
 
-<form id="payment-form">
-    <div id="card-container"></div>
-    <button id="submit-button" type="submit">Pay Now</button>
-</form>
+Hello! This is my first time using square, and I'm trying to set up a simple checkout page (ignoring formatting for now):
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Checkout Test</title>
+
+    <style>
+        .sq-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Square Checkout</h1>
+    <div id="sq-ccbox">
+        <input type="text" id="card-number" class="sq-input" placeholder="Card Number" />
+        <input type="text" id="cvv" class="sq-input" placeholder="CVV" />
+        <input type="text" id="expiration-date" class="sq-input" placeholder="Expiration Date" />
+        <input type="text" id="postal-code" class="sq-input" placeholder="Postal Code" />
+    </div>
+
+    <button id="checkout-button">Checkout with Square</button>
+
+    <script>
+        function onScriptLoad() {
+            console.log("Square.js has loaded successfully!");
+            initializePaymentForm();
+        }
+
+        function onScriptError() {
+            console.error("Error: Failed to load Square.js");
+            alert("There was an issue loading the Square.js library. Please check the console for errors.");
+        }
+
+        function initializePaymentForm() {
+            if (typeof SqPaymentForm === 'undefined') {
+                console.error("Error: SqPaymentForm is still not available.");
+                alert("Error: Square Payment Form is not available.");
+                return;
+            }
+
+            const paymentForm = new SqPaymentForm({
+                applicationId: "sandbox-sq0idb-2b8SdmkXATd2MopBMhmyzg",
+                locationId: , 
+                inputClass: 'sq-input',
+                autoBuild: false,
+                inputStyles: [
+                    {
+                        fontSize: '.9em',
+                        padding: '.5em',
+                        color: '#000',
+                        backgroundColor: '#fff',
+                        border: '1px solid #ccc',
+                        borderRadius: '5px',
+                    }
+                ],
+                cardNumber: { elementId: 'card-number' },
+                cvv: { elementId: 'cvv' },
+                expirationDate: { elementId: 'expiration-date' },
+                postalCode: { elementId: 'postal-code' },
+                callbacks: {
+                    cardNonceResponseReceived: function(errors, nonce, cardData) {
+                        if (errors) {
+                            console.error("Errors: ", errors);
+                            alert("There was an error processing your card.");
+                            return;
+                        }
+
+                        processPayment(nonce);
+                    }
+                }
+            });
+
+            paymentForm.build();
+
+            document.getElementById("checkout-button").addEventListener("click", function() {
+                paymentForm.requestCardNonce();
+            });
+        }
+
+        // Function to send nonce to backend for processing
+        function processPayment(nonce) {
+            const items = [
+                { name: "Item 1", quantity: 1, price: 10.00 },
+                { name: "Item 2", quantity: 2, price: 20.00 }
+            ];
+
+            fetch("http://localhost:3000/create-checkout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ items })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.checkoutUrl) {
+                    window.location.href = data.checkoutUrl;
+                } else {
+                    alert("Error creating checkout URL.");
+                }
+            })
+            .catch(err => {
+                console.error("Error during checkout:", err);
+                alert("Error during checkout.");
+            });
+        }
+
+        const squareJsScript = document.createElement('script');
+        squareJsScript.src = "https://sandbox.web.squarecdn.com/v1/square.js";
+        squareJsScript.onload = onScriptLoad;
+        squareJsScript.onerror = onScriptError;
+        document.body.appendChild(squareJsScript);
+    </script>
+</body>
+</html>
+
+```
+
+I redacted my locationId, but I double-checked it, and it is correct, square.js has a status of 200. Currently, this is the error I'm running into:
+
+Square.js has loaded successfully! checkout.html:32:21
+Error: SqPaymentForm is still not available. checkout.html:46:25
+
+
+Not sure if I'm on the right path, so any help would be greatly appreciated!

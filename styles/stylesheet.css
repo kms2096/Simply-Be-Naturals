@@ -175,6 +175,7 @@ footer {
     float: left; 
     width: 250px; 
     border-radius: 15%;
+    margin-right: 30px;
 }
 
 #about_paragraph {
@@ -185,11 +186,12 @@ footer {
 
 /* Store Page */
 #tile_container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    width: 80%;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 15px; /* Optional: Add space between elements */
+    width: 100%;
     margin: 40px auto;
+    justify-content: center;
 }
 
 .filterDiv {
@@ -200,6 +202,8 @@ footer {
     text-align: center;
     flex-grow: 0; /* Prevent growth */
     flex-shrink: 0; /* Prevent shrinking */
+    width: calc(100% / 5 - 15px); /* Adjust to fit 5 in a row with some gap */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .store_navigation {
@@ -211,8 +215,8 @@ footer {
 }
 
 #btn_container {
-    display: flex;
-    justify-content: space-between; /* Distribute space evenly between buttons */
+    /*display: flex; - TODO: Keeps it on one line*/
+    text-align: center;
     width: 100%; /* Ensure the container takes up the full width */
     gap: 10px; /* Optional: add space between the buttons */
 }
@@ -222,6 +226,8 @@ footer {
     color: #000000;
     border-radius: 10%;
     white-space: nowrap;
+    padding: 3px;
+    border: none;
 }
 
 .btn:hover {
@@ -273,14 +279,18 @@ footer {
     align-items: center;
 }
 
-.add-to-cart-btn {
+.add-to-cart-btn,
+.buy-button {
     background-color: #4caf4f89;
     color: #000000;
     border-radius: 10%;
     white-space: nowrap;
+    border: none;
+    padding: 5px;
 }
 
-.buy-button-store:hover {
+.buy-button:hover,
+.add-to-cart-btn:hover {
     background-color: #45a049;
 }
 
@@ -324,6 +334,7 @@ footer {
     width: 100%;
     max-width: 200px;
     border-radius: 10px;
+    margin: auto;
 }
 
 #product_name {
@@ -331,23 +342,13 @@ footer {
     grid-column: 2 / span 2;
     font-size: 50px;
     font-weight: bold;
-    margin-left: 0;
+    margin: 0;
 }
 
 #product_price {
     font-size: 20px;
     font-weight: bold;
     text-align: end;
-}
-
-.buy_button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
 }
 
 #product_description {
@@ -360,11 +361,6 @@ footer {
 /* Responsive Styles */
 
 @media screen and (max-width: 450px) {
-    #tile_container {
-        display: block;
-        width: 100%;
-    }
-
     .filterDiv {
         margin-bottom: 10px;
     }
@@ -380,20 +376,12 @@ footer {
 }
 
 @media screen and (max-width: 1150px) {
-    #tile_container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
     .price_and_button {
-    
         width: auto;
     }
 }
 
 @media screen and (max-width: 700px) {
-    #tile_container {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media screen and (min-width: 961px) {
@@ -540,4 +528,72 @@ footer {
 /* Show Cart Dropdown */
 .show-cart {
     display: block !important;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .filterDiv {
+        width: calc(100% / 4 - 15px); /* Adjust to 4 items per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .filterDiv {
+        width: calc(100% / 3 - 15px); /* Adjust to 3 items per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .filterDiv {
+        width: calc(100% / 2 - 15px); /* Adjust to 2 items per row on small screens */
+    }
+
+    
+}
+
+@media screen and (max-width: 450px) {
+    .filterDiv {
+        width: 75%; /* Stack to 1 item per row on very small screens */
+    }
+
+    #product_image {
+        width: 80%; /* Further adjust for very small screens */
+        max-width: none;
+        margin: auto;
+    }
+}
+
+/* Mobile-Only Layout */
+@media screen and (max-width: 600px) {
+    #product_container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 15px; /* Add space between elements */
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    #product_image {
+        width: 80%; /* Adjust image size */
+        max-width: none; /* Remove max-width to make it flexible */
+        margin: auto;
+    }
+
+    #product_name {
+        font-size: 40px;
+        text-align: center; /* Center the title on mobile */
+        margin: 0;
+    }
+
+    #product_description {
+        font-size: 14px; /* Slightly smaller font for mobile */
+        text-align: center; /* Center description text */
+    }
+
+    #product_price {
+        font-size: 18px;
+        text-align: center; /* Center the price */
+    }
 }

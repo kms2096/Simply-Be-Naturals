@@ -2,30 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Square Checkout Test</title>
+
+    <style>
+        .sq-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Test Square Checkout</h1>
+    <div id="sq-ccbox">
+        <input type="text" id="card-number" class="sq-input" placeholder="Card Number" />
+        <input type="text" id="cvv" class="sq-input" placeholder="CVV" />
+        <input type="text" id="expiration-date" class="sq-input" placeholder="Expiration Date" />
+        <input type="text" id="postal-code" class="sq-input" placeholder="Postal Code" />
+    </div>
+
     <button id="checkout-button">Checkout with Square</button>
 
     <script>
-        const script = document.createElement("script");
-        script.src = "https://sandbox.web.squarecdn.com/v1/square.js"; // Change to production for live
-        script.onload = function() {
-            console.log("Square script loaded successfully.");
-            setTimeout(function() {
-                // Add a delay before checking for SqPaymentForm
-                if (window.SqPaymentForm) {
-                    console.log("SqPaymentForm is available.");
-                } else {
-                    console.error("SqPaymentForm is not available.");
+        // Function to handle script loading success
+        function onScriptLoad() {
+            console.log("Square.js has loaded successfully!");
+            // Initialize the Square Payment Form after the script has loaded
+            initializePaymentForm();
+        }
+
+        // Function to handle script loading errors
+        function onScriptError() {
+            console.error("Error: Failed to load Square.js");
+            alert("There was an issue loading the Square.js library. Please check the console for errors.");
+        }
+
+        // Function to initialize Square Payment Form
+        function initializePaymentForm() {
+            if (typeof SqPaymentForm === 'undefined') {
+                console.error("Error: SqPaymentForm is still not available.");
+                alert("Error: Square Payment Form is not available.");
+                return;
+            }
+
+            const paymentForm = new SqPaymentForm({
+                applicationId: "sandbox-sq0idb-2b8SdmkXATd2MopBMhmyzg", // Use your Sandbox Application ID here
+                locationId: "LFQ5PA03FEVQ0", // Use your Location ID here
+                inputClass: 'sq-input',
+                autoBuild: false,
+                inputStyles: [
+                    {
+                        fontSize: '.9em',
+                        padding: '.5em',
+                        color: '#000',
+                        backgroundColor: '#fff',
+                        border: '1px solid #ccc',
+                        borderRadius: '5px',
+                    }
+                ],
+                cardNumber: { elementId: 'card-number' },
+                cvv: { elementId: 'cvv' },
+                expirationDate: { elementId: 'expiration-date' },
+                postalCode: { elementId: 'postal-code' },
+                callbacks: {
+                    cardNonceResponseReceived: function(errors, nonce, cardData) {
+                        if (errors) {
+                            console.error("Errors: ", errors);
+                            alert("There was an error processing your card.");
+                            return;
+                        }
+
+                        // Send the nonce to your backend for payment processing
+                        processPayment(nonce);
+                    }
                 }
-            }, 2000);  // Wait for 2 seconds before checking
-        };
-        script.onerror = function() {
-            console.error("Failed to load Square script.");
-        };
-        document.head.appendChild(script);
+            });
+
+            paymentForm.build(); // Build the payment form
+
+            document.getElementById("checkout-button").addEventListener("click", function() {
+                paymentForm.requestCardNonce();
+            });
+        }
+
+        // Function to send nonce to backend for processing
+        function processPayment(nonce) {
+            const items = [
+                { name: "Item 1", quantity: 1, price: 10.00 },
+                { name: "Item 2", quantity: 2, price: 20.00 }
+            ];
+
+            fetch("http://localhost:3000/create-checkout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ items })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.checkoutUrl) {
+                    window.location.href = data.checkoutUrl; // Redirect to Square checkout page
+                } else {
+                    alert("Error creating checkout URL.");
+                }
+            })
+            .catch(err => {
+                console.error("Error during checkout:", err);
+                alert("Error during checkout.");
+            });
+        }
+
+        // Dynamically load Square.js with onload and onerror handlers
+        const squareJsScript = document.createElement('script');
+        squareJsScript.src = "https://sandbox.web.squarecdn.com/v1/square.js";
+        squareJsScript.onload = onScriptLoad;
+        squareJsScript.onerror = onScriptError;
+        document.body.appendChild(squareJsScript);
     </script>
 </body>
 </html>
