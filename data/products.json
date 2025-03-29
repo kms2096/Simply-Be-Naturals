@@ -1,76 +1,103 @@
 {
     "products": [
         {
-            "id": "lotion1",
-            "name": "Lavender Lotion",
-            "description": "A soothing lavender-scented lotion for soft skin.",
-            "price": "$12.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "Lotion"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "lipbalm-citrus",
+            "name": "Citrus Lip Balm",
+            "description": "",
+            "price": "$3.00",
+            "image": "",
+            "category": ["LipBalm"],
+            "paymentLink": ["https://square.link/u/8Mh1a6GN"]
         },
         {
-            "id": "lipbalm1",
+            "id": "lipbalm-mint",
             "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "description": "",
+            "price": "$3.00",
+            "image": "",
+            "category": ["LipBalm"],
+            "paymentLink": ["https://square.link/u/Xsww7Ypl"]
         },
         {
-            "id": "lipbalm1",
-            "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "lipbalm-vanilla",
+            "name": "Vanilla Lip Balm",
+            "description": "",
+            "price": "$3.00",
+            "image": "",
+            "category": ["LipBalm"],
+            "paymentLink": ["https://square.link/u/OM5pbiEd"]
         },
         {
-            "id": "lipbalm1",
-            "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "bodybutter-lavender",
+            "name": "Lavender Whipped Body Butter",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["BodyButter"],
+            "paymentLink": ["https://square.link/u/IWnQ28zT"]
         },
         {
-            "id": "lipbalm1",
-            "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "bodybutter-vanilla",
+            "name": "Vanilla Whipped Body Butter",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["BodyButter"],
+            "paymentLink": ["https://square.link/u/cTYHNDPM"]
         },
         {
-            "id": "lipbalm1",
-            "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "detergent-unscented",
+            "name": "Unscented Laundry Powder",
+            "description": "",
+            "price": "$7.00",
+            "image": "",
+            "category": ["Detergent"],
+            "paymentLink": ["https://square.link/u/jOr6HTlE"]
         },
         {
-            "id": "lipbalm1",
-            "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "hair-dryshampoo",
+            "name": "Dry Shampoo",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["Hair"],
+            "paymentLink": ["https://square.link/u/nARJ2PHZ"]
         },
         {
-            "id": "lipbalm1",
-            "name": "Mint Lip Balm",
-            "description": "Refreshing mint lip balm to keep lips hydrated.",
-            "price": "$5.99",
-            "image": "data/images/profile.jpg",
-            "category": ["Featured", "LipBalm"],
-            "paymentLink": ["https://square.link/u/z344Drga"]
+            "id": "deodorant-fabulousfloral",
+            "name": "Fabulous Floral Deodorant",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["Deodorant"],
+            "paymentLink": ["https://square.link/u/zsA4pcac"]
+        },
+        {
+            "id": "deodorant-freshclean",
+            "name": "Fresh and Clean Deodorant",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["Deodorant"],
+            "paymentLink": ["https://square.link/u/ne1rar8N"]
+        },
+        {
+            "id": "deodorant-oceanbreeze",
+            "name": "Ocean Breeze Deodorant",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["Deodorant"],
+            "paymentLink": ["https://square.link/u/yi2jWB3O"]
+        },
+        {
+            "id": "deodorant-greatoutdoors",
+            "name": "The Great Outdoors Deodorant",
+            "description": "",
+            "price": "$6.00",
+            "image": "",
+            "category": ["Deodorant"],
+            "paymentLink": ["https://square.link/u/HxatPrRY"]
         }
     ]
 }
