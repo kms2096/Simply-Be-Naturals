@@ -5,7 +5,8 @@ Needed:
 Later:
 - Featured/new section
 - Make a dark mode
-- clean up code: move /body tags
+- clean up code
+- show active button as darkened
 
 do i need "cursor: pointer"?
 
