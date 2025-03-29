@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simply Be Naturals</title>
+
     <!-- Link to CSS -->
     <link rel="stylesheet" href="styles/stylesheet.css">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap&display=swap" rel="stylesheet">
 
     <!-- Square -->
     <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
@@ -21,26 +23,20 @@
     <div id="header"></div>
 
     <!-- TODO: MOVE THIS TO SEPARATE FILE??? -->
-    <hr>
     <p id="apology">Please excuse...... Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed expedita placeat tempore itaque suscipit animi doloremque qui sapiente non. Pariatur expedita in ut saepe itaque blanditiis eaque atque quae.</p>
-    <hr>
 
-
-    <!--script script src="src/app.js"></script-->
     <h1 class="page_header">Shop</h1>
-
-
 
     <!-- Categories of items -->
     <section class="store_navigation">
-        <!--ul class="filter_menu">
+        <!--div class="filter_menu">
             <button class="dropdown_btn">Filter</button>
             <div class="dropdown_menu">
-                <li class="btn" onclick="filterSelection('all')">Show All</li>
-                <li class="btn" onclick="filterSelection('Lotion')">Lotion</li>
-                <li class="btn" onclick="filterSelection('LipBalm')">Lip Balm</li>
+                <button class="btn" onclick="filterSelection('all')">Show All</button>
+                <button class="btn" onclick="filterSelection('Lotion')">Lotion</button>
+                <button class="btn" onclick="filterSelection('LipBalm')">Lip Balm</button>
             </div>
-        </ul-->
+        </div-->
         <div id="btn_container">
             <button class="btn active" data-category="all">Show All</button>
             <button class="btn" data-category="Featured">Featured</button>
@@ -52,16 +48,17 @@
         </div>
     </section>
     <div id="tile_container"></div>
-    <script src="src/products.js"></script> 
-    <script src="src/app.js"></script>
+    <script src="src/products.js" defer></script> 
+    <script src="src/app.js" defer></script>
+
+    <!-- Contact Info -->
+    <footer>
+        <div class="contact_container">
+            <div class="contact_phone">(585) 736-1152</div>
+            <div class="contact_email">contact@simplybenaturals.com</div>
+        </div>
+        <!-- TODO: is this needed?? -->
+        <p id="trademark">&copy; 2025 Simply Be Naturals. All rights reserved.</p>
+    </footer>
 </body>
-<!-- Contact Info -->
-<footer>
-    <div class="contact_container">
-        <div class="contact_phone">(585) 736-1152</div>
-        <div class="contact_email">contact@simplybenaturals.com</div>
-    </div>
-    <!-- TODO: is this needed?? -->
-    <p id="trademark">&copy; 2025 Simply Be Naturals. All rights reserved.</p>
-</footer>
 </html>

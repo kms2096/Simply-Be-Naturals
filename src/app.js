@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var matchesSearch = searchInput === "" || text.includes(searchInput);
 
                     // Show item only if BOTH filters match
-                    item.style.display = matchesCategory && matchesSearch ? "block" : "none";
+                    item.style.display = matchesCategory && matchesSearch ? "flex" : "none";
                 }
             }
 

@@ -10,15 +10,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Meow+Script&display=swap&display=swap" rel="stylesheet">
 
     <!-- Square -->
     <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
-
 </head>
 <body>
     <div id="header"></div>
-    <script script src="src/app.js"></script>
     <!-- Picture, Title, price, description, buy -->
     <div id="product_container">
         <img id="product_image" src="" alt="Product Image">
@@ -27,14 +25,18 @@
         <p id="product_price"></p>
         <button class="buy-button">Buy Now</button>
     </div>
-    <script script src="src/products.js"></script>
+
+    <!-- Contact Info -->
+    <footer>
+        <div class="contact_container">
+            <div class="contact_phone">(585) 736-1152</div>
+            <div class="contact_email">contact@simplybenaturals.com</div>
+        </div>
+        <!-- TODO: is this needed?? -->
+        <p id="trademark">&copy; 2025 Simply Be Naturals. All rights reserved.</p>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="src/app.js" defer></script>
+    <script src="src/products.js" defer></script>
 </body>
-<!-- Contact Info -->
-<footer>
-    <div class="contact_container">
-        <div class="contact_phone">(585) 736-1152</div>
-        <div class="contact_email">contact@simplybenaturals.com</div>
-    </div>
-    <!-- TODO: is this needed?? -->
-    <p id="trademark">&copy; 2025 Simply Be Naturals. All rights reserved.</p>
-</footer>

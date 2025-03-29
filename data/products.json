@@ -17,6 +17,60 @@
             "image": "data/images/profile.jpg",
             "category": ["Featured", "LipBalm"],
             "paymentLink": ["https://square.link/u/z344Drga"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"],
+            "paymentLink": ["https://square.link/u/z344Drga"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"],
+            "paymentLink": ["https://square.link/u/z344Drga"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"],
+            "paymentLink": ["https://square.link/u/z344Drga"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"],
+            "paymentLink": ["https://square.link/u/z344Drga"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"],
+            "paymentLink": ["https://square.link/u/z344Drga"]
+        },
+        {
+            "id": "lipbalm1",
+            "name": "Mint Lip Balm",
+            "description": "Refreshing mint lip balm to keep lips hydrated.",
+            "price": "$5.99",
+            "image": "data/images/profile.jpg",
+            "category": ["Featured", "LipBalm"],
+            "paymentLink": ["https://square.link/u/z344Drga"]
         }
     ]
 }
