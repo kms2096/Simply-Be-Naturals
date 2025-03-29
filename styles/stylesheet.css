@@ -36,7 +36,7 @@ footer {
 #product_name {
     font-family: 'Meow Script', cursive;
     color: #45a049;
-    font-size: 50px;
+    font-size: 3.5rem;
     margin: auto auto 0 15%;
 }
 
@@ -45,19 +45,19 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 75px;
+    height: 4.75rem;
     width: 100%;
     background-color: rgb(255, 255, 255);
     position: sticky;
     top: 0;
     z-index: 99;
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 
 #page_options_container,
 #store_options_container {
     display: flex;
-    gap: 30px;
+    gap: 2rem;
 }
 
 #page_options_container {
@@ -74,7 +74,7 @@ footer {
 #search-icon,
 #cart-icon {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
@@ -103,9 +103,9 @@ footer {
     left: 0;
     background-color: white;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     z-index: 1;
-    padding: 5px 0;
+    padding: 0.3rem 0;
 }
 
 /* Show dropdown when checkbox is checked */
@@ -139,14 +139,13 @@ footer {
 
 .search-icon {
     cursor: pointer;
-    font-size: 20px;
-    margin-right: 10px;
+    margin-right: 0.5rem;
     transition: 0.3s ease;
 }
 
 /* Logo */
 #logo {
-    height: 75px;
+    height: 4.75rem;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -154,22 +153,22 @@ footer {
 
 /* About Page */
 .about_container {
-    margin: 50px auto;
+    margin: 3.5rem auto;
     width: 90%;
 }
 
 #about_picture {
     float: left; 
-    width: 250px; 
+    width: 15.5rem; 
     border-radius: 15%;
-    margin-right: 30px;
+    margin-right: 2rem;
 }
 
 #about_paragraph {
-    font-size: 25px;
-    margin: 15px auto;
-    width: 70%;
-    border: 3px solid #45a049;
+    font-size: 1.65rem;
+    margin: 1rem auto;
+    width: 80%;
+    border: 0.2rem solid #45a049;
     border-left: none;
     border-right: none;
     background-color: #fff;
@@ -180,8 +179,8 @@ footer {
 #tile_container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin: 40px auto;
+    gap: 1rem;
+    margin: 2.5rem auto;
     justify-content: center;
 }
 
@@ -189,9 +188,9 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 1rem;
     text-align: center;
-    width: calc(100% / 5 - 15px);
+    width: calc(100% / 5 - 1rem);
     box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
@@ -206,14 +205,14 @@ footer {
 
 #btn_container {
     background-color: #fff;
-    border: 3px solid #45a049;
+    border: 0.2rem solid #45a049;
     border-left: none;
     border-right: none;
     text-align: center;
     width: 100%; /* Full width */
     display: flex;
     justify-content: space-around; /* Space out the buttons evenly */
-    padding: 10px 0; /* Add some padding for spacing */
+    padding: 0.75rem 0; /* Add some padding for spacing */
 }
 
 
@@ -221,7 +220,7 @@ footer {
     background-color: #fff;
     color: #000000;
     border-radius: 10%;
-    padding: 3px;
+    padding: 0.2rem;
     border: none;
     cursor: pointer;
 }
@@ -255,12 +254,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px;
+    padding: 0.2rem;
 }
 
 .price_and_button {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -272,7 +271,7 @@ footer {
     border-radius: 10%;
     white-space: nowrap;
     border: none;
-    padding: 5px;
+    padding: 0.2rem;
     cursor: pointer;
 }
 
@@ -285,7 +284,7 @@ footer {
 .data-product-price {
     color: #45a049;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 /* Contact */
@@ -295,11 +294,11 @@ footer {
 }
 
 .contact_container {
-    padding: 40px 0 15px;
+    padding: 2.5rem 0 1rem;
 }
 
 #trademark {
-    margin: 50px auto 0;
+    margin: 2.5rem auto 0;
 }
 
 
@@ -307,10 +306,10 @@ footer {
 #product_container {
     display: grid;
     grid-template-columns: auto 1fr 1fr;
-    gap: 25px;
+    gap: 1.5rem;
     max-width: 800px;
     margin: auto;
-    padding: 20px;
+    padding: 1.2rem;
     align-items: center;
     width: 90%;
 }
@@ -319,7 +318,7 @@ footer {
     grid-row: 1 / span 3; /* Image spans all three rows */
     width: 100%;
     max-width: 200px;
-    border-radius: 10px;
+    border-radius: 0.75rem;
 }
 
 #product_name {
@@ -330,14 +329,14 @@ footer {
 }
 
 #product_price {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: end;
 }
 
 #product_description {
     grid-column: 2 / span 2;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
 }
 
@@ -350,15 +349,15 @@ footer {
         margin-top: 0;
     }
     
-    .filterDiv { width: calc(100% / 4 - 15px); }
+    .filterDiv { width: calc(100% / 4 - 1rem); }
     #about_picture { margin: auto; }
-    #about_paragraph { font-size: 20px; padding: 5px 19px; }
-    .page_header, #product_name { font-size: 40px; margin-left: 5%; }
-    .navbar_container { font-size: 14px; }
-    #logo, .navbar_container { height: 40px; }
+    #about_paragraph { font-size: 1.4rem; padding: 0.2rem 1rem; }
+    .page_header, #product_name { font-size: 2.5rem; margin-left: 5%; }
+    .navbar_container { font-size: 1rem; }
+    #logo, .navbar_container { height: 2.5rem; }
     #page_options_container, .hidden-search { display: none; }
     #search-icon, .hidden-search.show-search { display: block; }
-    #store_options_container { gap: 15px; padding-right: 2%; }
+    #store_options_container { gap: 1rem; padding-right: 2%; }
 }
 
 @media screen and (min-width: 961px) {
@@ -375,20 +374,20 @@ footer {
         text-align: center;
     }
     #product_image { width: 65%; }
-    #product_name { font-size: 40px; margin: auto; }
-    #product_description { font-size: 14px; }
-    #product_price { font-size: 18px; }
+    #product_name { font-size: 2.5rem; margin: auto; }
+    #product_description { font-size: 1rem; }
+    #product_price { font-size: 1.2rem; }
 }
 
 #apology,
 hr {
     background-color: #fff;
-    margin: 15px auto;
+    margin: 1rem auto;
     width: 70%;
-    font-size: 20px;
+    font-size: 1rem;
     border-style: solid none solid none;
     border-color:#45a049;
-    border-width: 3px;
+    border-width: 0.2rem;
 
 }
 
@@ -402,14 +401,14 @@ hr {
     display: none;
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 2.5rem;
     width: 250px;
     background-color: white;
     border: 1px solid #ccc;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    padding: 1rem;
     z-index: 100;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 .cart-title {
